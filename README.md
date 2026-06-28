@@ -1,75 +1,11 @@
-# React + TypeScript + Vite
+# Dashboard Chart App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Данный проект представляет собой React-приложение (Vite + TypeScript) с интерактивным дашбордом для визуализации 4 временных рядов. Включает динамическое добавление данных, валидацию формы и плавную анимацию маркеров при наведении.
 
-Currently, two official plugins are available:
+Для корректной установки и запуска на вашем компьютере должно быть установлено Node.js версии 16 или выше и пакетный менеджер npm или yarn.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Для начала работы необходимо склонировать репозиторий на свой компьютер и перейти в его папку с помощью команд `git clone https://github.com/ChelGame/Chart.git` и `cd [название_папки_проекта]`, также можно просто скачать архив прямо из репозитория. После этого выполните команду `npm install` для установки всех необходимых зависимостей. Запустите локальный сервер разработки Vite командой `npm run dev`. После запуска в терминале появится ссылка для доступа к приложению (по умолчанию `http://localhost:5173`) — откройте её в браузере. Если требуется создать готовую к загрузке на сервер версию проекта, выполните команду `npm run build`, и готовые файлы появятся в папке `dist`.
 
-## React Compiler
+При возникновении ошибки при запуске, связанной с PostCSS, это значит, что автоматически установилась несовместимая версия Tailwind. Чтобы исправить это, принудительно установите стабильную версию 3, выполнив `npm install -D tailwindcss@3 postcss autoprefixer`, и повторите запуск. Если порт `5173` окажется занят, Vite автоматически предложит альтернативный порт — проверьте новую ссылку в терминале. Также убедитесь, что в корневой папке вашего проекта присутствуют файлы конфигурации `tailwind.config.js` и `postcss.config.js`, так как без них график может не отобразить точки и стили.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Если остались вопросы @ChelGame_t
